@@ -11,7 +11,9 @@
 + ` off(event[], handler)`
 
 ```js
-import mitt from "mitt-ext";
+import mittExt from "mitt-ext";
+
+const mitt = mittExt();
 
 function handler(payload) {
 	console.log(payload);
