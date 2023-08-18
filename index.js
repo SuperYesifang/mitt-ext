@@ -11,6 +11,10 @@ export default function mittExt() {
 		off(...args) {
 			if (typeof args[0] == "string" || typeof args[0] == "symbol") return emittor.off(...args);
 			if (Array.isArray(args[0])) return args[0].reduce((o, i) => (emittor.off(i, args[1]), o), []);
+		},
+		emit(...args) {
+			if (typeof args[0] === "string" || typeof args[0] === "symbol") return emittor.emit(...args);
+			if (Array.isArray(args[0])) return args[0].reduce((o, i) => (emittor.emit(i, args[1]), o), []);
 		}
 	};
 };
